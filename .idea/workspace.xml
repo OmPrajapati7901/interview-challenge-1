@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6bec6a4-676c-4aee-8e97-14cf2973de7a" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/exception/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="c6bec6a4-676c-4aee-8e97-14cf2973de7a" name="Changes" comment="Added  custom exceptional, logging and Transactional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/StudentTeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/StudentTeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/student-teacher-api/src/main/java/com/omp/student_teacher_api/service/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "OmPrajapati7901"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;OmPrajapati7901&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/OmPrajapati7901/interview-challenge-1.git",
-    "accountId": "9202c98c-0b66-4b88-a142-81b9723a5d24"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/OmPrajapati7901/interview-challenge-1.git&quot;,
+    &quot;accountId&quot;: &quot;9202c98c-0b66-4b88-a142-81b9723a5d24&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -54,26 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.StudentTeacherApiApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Antra/JavaTraining/Project/student-teacher-api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.StudentTeacherApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Antra/JavaTraining/Project/student-teacher-api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="StudentTeacherApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="student-teacher-api" />
@@ -101,7 +96,9 @@
       <updated>1742779978542</updated>
       <workItem from="1742779979766" duration="3938000" />
       <workItem from="1742818235119" duration="4382000" />
-      <workItem from="1742824655323" duration="3328000" />
+      <workItem from="1742824655323" duration="4726000" />
+      <workItem from="1742829955884" duration="601000" />
+      <workItem from="1742835950330" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -111,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742826366499</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added  custom exceptional, logging and Transactional">
+      <option name="closed" value="true" />
+      <created>1742828150351</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742828150351</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Added  custom exceptional, logging and Transactional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added  custom exceptional, logging and Transactional" />
   </component>
 </project>
