@@ -1,11 +1,19 @@
 package com.omp.student_teacher_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Teacher {
 
     @Id @GeneratedValue
@@ -16,39 +24,9 @@ public class Teacher {
     private String subject;
 
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
-    private List<StudentTeacher> studentTeachers = new ArrayList<>();
+    private Set<StudentTeacher> studentTeachers = new HashSet<>();
 
-    public String getSubject() {
-        return subject;
-    }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
 
 }

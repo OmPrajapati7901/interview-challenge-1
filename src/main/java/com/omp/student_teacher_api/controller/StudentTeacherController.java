@@ -1,13 +1,14 @@
 package com.omp.student_teacher_api.controller;
 
 
-import com.omp.student_teacher_api.entity.StudentTeacher;
+
 import com.omp.student_teacher_api.service.StudentTeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/assignments")
@@ -17,12 +18,12 @@ public class StudentTeacherController {
     private StudentTeacherService service;
 
     @PostMapping
-    public ResponseEntity<StudentTeacher> assign(@RequestParam Long studentId, @RequestParam Long teacherId) {
+    public ResponseEntity<String> assign(@RequestParam Long studentId, @RequestParam Long teacherId) {
         return ResponseEntity.ok(service.assign(studentId, teacherId));
     }
 
     @GetMapping
-    public ResponseEntity<List<StudentTeacher>> getAll() {
+    public ResponseEntity<List<Map<String, Object>>> getAll() {
         return ResponseEntity.ok(service.getAllAssignments());
     }
 }

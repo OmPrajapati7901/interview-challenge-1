@@ -1,6 +1,7 @@
 package com.omp.student_teacher_api.controller;
 
 
+import com.omp.student_teacher_api.dto.StudentResponseDTO;
 import com.omp.student_teacher_api.entity.Student;
 import com.omp.student_teacher_api.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +18,17 @@ public class StudentController {
     private StudentService service;
 
     @PostMapping
-    public ResponseEntity<Student> create(@RequestBody Student student) {
+    public ResponseEntity<StudentResponseDTO> create(@RequestBody Student student) {
         return ResponseEntity.ok(service.saveStudent(student));
     }
 
     @GetMapping
-    public ResponseEntity<List<Student>> getAll() {
+    public ResponseEntity<List<StudentResponseDTO>> getAll() {
         return ResponseEntity.ok(service.getAllStudents());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getById(@PathVariable Long id) {
-        Student student = service.getStudentById(id);
-        return ResponseEntity.ok(student);
+    public ResponseEntity<StudentResponseDTO> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(service.getStudentById(id));
     }
 }

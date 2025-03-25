@@ -1,6 +1,7 @@
 package com.omp.student_teacher_api.service;
 
 
+import com.omp.student_teacher_api.dto.TeacherResponseDTO;
 import com.omp.student_teacher_api.entity.Teacher;
 import com.omp.student_teacher_api.repository.TeacherRepository;
 import jakarta.transaction.Transactional;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TeacherService {
@@ -17,14 +19,18 @@ public class TeacherService {
     private TeacherRepository teacherRepo;
 
     @Transactional
-    public Teacher saveTeacher(Teacher teacher){
-        return teacherRepo.save(teacher);
+    public TeacherResponseDTO saveTeacher(Teacher teacher){
+
+        return new TeacherResponseDTO(teacherRepo.save(teacher));
     }
 
-    public List<Teacher> getAllTeachers(){return teacherRepo.findAll();
+    public List<TeacherResponseDTO> getAllTeachers(){return teacherRepo.findAll().stream()
+            .map(TeacherResponseDTO::new)
+            .collect(Collectors.toList());
     }
 
-    public Optional<Teacher> getTeacherById(Long id){
-        return teacherRepo.findById(id);
+    public TeacherResponseDTO getTeacherById(Long id){
+        Teacher teacher = teacherRepo.findById(id).orElseThrow();
+        return new TeacherResponseDTO(teacher);
     }
 }

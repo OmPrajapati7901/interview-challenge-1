@@ -1,5 +1,6 @@
 package com.omp.student_teacher_api.service;
 
+import com.omp.student_teacher_api.dto.StudentResponseDTO;
 import com.omp.student_teacher_api.entity.Student;
 import com.omp.student_teacher_api.exception.ResourceNotFoundException;
 import com.omp.student_teacher_api.repository.StudentRepository;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -20,27 +22,31 @@ public class StudentService {
     private StudentRepository studentRepo;
 
     @Transactional
-    public Student saveStudent(Student student) {
+    public StudentResponseDTO saveStudent(Student student) {
 
         logger.info("Attempting to save student: {}", student);
         Student savedStudent = studentRepo.save(student);
         logger.info("Successfully saved student with ID: {}", savedStudent.getId());
-        return savedStudent;
+        return new StudentResponseDTO(savedStudent);
     }
 
-    public List<Student> getAllStudents() {
+    public List<StudentResponseDTO> getAllStudents() {
         logger.info("Fetching all students");
-        List<Student> students = studentRepo.findAll();
+        List<StudentResponseDTO> students = studentRepo.findAll().stream()
+                .map(StudentResponseDTO::new)
+                .collect(Collectors.toList());
         logger.info("Retrieved {} students", students.size());
         return students;
     }
 
-    public Student  getStudentById(Long id) {
+    public StudentResponseDTO getStudentById(Long id) {
         logger.info("Fetching student by ID: {}", id);
-        return studentRepo.findById(id)
+        Student student = studentRepo.findById(id)
                 .orElseThrow(() -> {
                     logger.error("Student not found with ID: {}", id);
                     return new ResourceNotFoundException("Student not found with ID: " + id);
                 });
+
+        return new StudentResponseDTO(student);
     }
 }
