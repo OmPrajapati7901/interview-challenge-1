@@ -4,22 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6bec6a4-676c-4aee-8e97-14cf2973de7a" name="Changes" comment="Added  custom exceptional, logging and Transactional">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/dto/StudentResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/dto/TeacherResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c6bec6a4-676c-4aee-8e97-14cf2973de7a" name="Changes" comment="Resolve circuler referece">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/config/AuthConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/config/auth/SecurityFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/config/auth/TokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/dto/JwtDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/dto/SignInDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/dto/SignUpDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/enums/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/StudentTeacherApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/StudentTeacherApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/StudentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/StudentTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/StudentTeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/controller/TeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/StudentTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/StudentTeacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/entity/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/StudentTeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/StudentTeacherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omp/student_teacher_api/service/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -62,27 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.StudentTeacherApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Antra/JavaTraining/Project/student-teacher-api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.StudentTeacherApiApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Antra/JavaTraining/Project/country-data-fetcher",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="StudentTeacherApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="student-teacher-api" />
@@ -114,7 +120,7 @@
       <workItem from="1742829955884" duration="601000" />
       <workItem from="1742835950330" duration="864000" />
       <workItem from="1742837710129" duration="13572000" />
-      <workItem from="1742904978315" duration="3613000" />
+      <workItem from="1742904978315" duration="13853000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -140,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742836315693</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Resolve circuler referece">
+      <option name="closed" value="true" />
+      <created>1742909209413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742909209413</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +163,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added  custom exceptional, logging and Transactional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added  custom exceptional, logging and Transactional" />
+    <MESSAGE value="Resolve circuler referece" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve circuler referece" />
   </component>
 </project>
